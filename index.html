@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Home | The Enterprise Grid</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Fraunces:ital,wght@0,600;1,500;1,600&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root { 
+      --bg:#FFFFFF; --bg-2:#F3F5F8; --panel:#FFFFFF; --line:#DCE2E8;
+      --ink:#13233A; --ink-soft:#4C5B6E; --accent:#1C5FA8; --accent-ink:#FFFFFF; --accent-soft:#E7EEF7;
+      --font-head:'Source Sans 3',sans-serif; --font-body:'Source Sans 3',sans-serif; --radius:6px;
+      --head-transform:none; --head-weight:700; --head-style:normal; --letter:0px;
+     --navbar:#0B1F3A; --navbar-ink:#FFFFFF; --navbar-ink-soft:#C9D6E6; }
+  
+  * { box-sizing: border-box; }
+  html, body { margin:0; padding:0; background:var(--bg); color:var(--ink); font-family:var(--font-body); }
+  a { color:inherit; }
+  .topbar { background:var(--navbar, var(--bg-2)); border-bottom:1px solid var(--line); }
+  .topbar .wrap { max-width:1180px; margin:0 auto; padding:18px 28px; display:flex; align-items:center; justify-content:space-between; }
+  .brand { display:flex; align-items:center; gap:10px; color:var(--navbar-ink, var(--ink)); text-decoration:none; font-family:var(--font-head); }
+  .brand .mark { width:34px; height:34px; border-radius:50%; background:var(--accent); color:var(--accent-ink); display:flex; align-items:center; justify-content:center; font-weight:800; font-size:14px; }
+  .brand .word { font-weight:700; font-size:14px; letter-spacing:1px; text-transform:uppercase; }
+  nav.links { display:flex; gap:22px; }
+  nav.links a { color:var(--navbar-ink-soft, var(--ink-soft)); text-decoration:none; font-size:14px; font-weight:600; }
+  nav.links a.active { color:var(--accent); }
+  .btn-primary { background:var(--accent); color:var(--accent-ink); border:none; padding:11px 20px; border-radius:var(--radius); font-weight:700; font-size:14px; white-space:nowrap; cursor:pointer; }
+  .btn-ghost { background:transparent; color:var(--ink); border:1px solid var(--line); padding:10px 18px; border-radius:var(--radius); font-weight:600; font-size:14px; cursor:pointer; }
+  .hero { position:relative; overflow:hidden; padding:72px 28px 56px; }
+  .hero .wrap { max-width:1180px; margin:0 auto; position:relative; z-index:2; }
+  .kicker { display:inline-block; font-family:var(--font-head); font-size:13px; letter-spacing:2px; color:var(--accent); background:var(--accent-soft); padding:6px 14px; border-radius:99px; margin-bottom:22px; text-transform:uppercase; }
+  h1 { font-family:var(--font-head); font-weight:var(--head-weight); font-style:var(--head-style); text-transform:var(--head-transform); letter-spacing:var(--letter); font-size:40px; line-height:1.14; margin:0 0 16px; max-width:820px; }
+  .lead { font-size:17px; line-height:1.55; color:var(--ink-soft); max-width:680px; margin:0 0 20px; }
+  .section { padding:56px 28px; }
+  .section .wrap { max-width:1180px; margin:0 auto; }
+  .section-head { margin-bottom:32px; }
+  .section-head .n { font-family:var(--font-head); font-size:12px; color:var(--accent); letter-spacing:1.5px; text-transform:uppercase; margin-bottom:8px; }
+  .section-head h2 { font-family:var(--font-head); font-weight:var(--head-weight); font-style:var(--head-style); text-transform:var(--head-transform); letter-spacing:var(--letter); font-size:28px; margin:0 0 10px; }
+  .section-head p { color:var(--ink-soft); max-width:720px; margin:0; font-size:15px; line-height:1.55; }
+  .svc-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+  .svc-card { background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:24px 26px; }
+  .svc-card h3 { font-family:var(--font-head); font-size:17px; margin:0 0 8px; color:var(--ink); }
+  .svc-card .certs { font-size:11px; letter-spacing:1px; text-transform:uppercase; color:var(--accent); margin-bottom:10px; font-weight:700; }
+  .svc-card p.sum { font-size:14px; line-height:1.5; color:var(--ink-soft); margin:0 0 12px; }
+  .svc-card a.more { font-size:13px; font-weight:700; color:var(--accent); text-decoration:none; }
+  .svc-detail { background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:30px 32px; margin-bottom:22px; }
+  .svc-detail h3 { font-family:var(--font-head); font-size:20px; margin:0 0 6px; }
+  .svc-detail .certs { font-size:11px; letter-spacing:1px; text-transform:uppercase; color:var(--accent); margin-bottom:14px; font-weight:700; }
+  .svc-detail p.desc { font-size:14.5px; line-height:1.68; color:var(--ink); margin:0 0 16px; }
+  .tech-groups { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; }
+  .tech-group h4 { font-size:12px; text-transform:uppercase; letter-spacing:1px; color:var(--ink-soft); margin:0 0 8px; }
+  .tech-group ul { margin:0; padding-left:18px; font-size:13px; line-height:1.6; color:var(--ink); }
+  .footer-strip { padding:26px 28px; border-top:1px solid var(--line); }
+  .footer-strip .wrap { max-width:1180px; margin:0 auto; display:flex; justify-content:space-between; font-size:12px; color:var(--ink-soft); flex-wrap:wrap; gap:8px; }
+  .motif-grid { position:absolute; inset:0; background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size:48px 48px; opacity:0.35; z-index:0; }
+  @media (max-width: 760px) { .svc-grid { grid-template-columns:1fr; } h1 { font-size:30px; } nav.links { display:none; } }
+
+</style>
+</head>
+<body>
+<div class="topbar"><div class="wrap">
+  <a class="brand" href="index.html"><span class="mark">HD</span><span class="word">Heavy Duty Security Co.</span></a>
+  <nav class="links"><a href="index.html" class="active">Home</a><a href="services.html" class="">Services</a></nav>
+  <button class="btn-primary">Request a Quote</button>
+</div></div>
+
+<div class="hero">
+  <div class="motif motif-grid"></div>
+  <div class="wrap">
+    <div class="kicker">Ruler &times; Corporate Grid</div>
+    <h1>Elite Security &amp; IT Solutions.</h1>
+    <p class="lead">Comprehensive physical and cybersecurity infrastructure management across eleven strategic business units.</p>
+    <div style="display:flex; gap:14px;">
+      <button class="btn-primary">Request a Quote</button>
+      <a href="services.html"><button class="btn-ghost">View Strategic Business Units</button></a>
+    </div>
+  </div>
+</div>
+<div class="section"><div class="wrap">
+  <div class="section-head">
+    <div class="n">What We Do</div>
+    <h2>The Enterprise Grid &mdash; Concept ENT</h2>
+    <p>A concept built to match the visual language of HDSC's current live website: a dark navy navigation bar over clean white content, a card-grid of strategic business units, and an authoritative, compliance-forward enterprise tone.</p>
+  </div>
+  <div class="svc-grid">
+    <div class="svc-card"><div class="certs">Section 01</div><h3>Hero banner</h3></div><div class="svc-card"><div class="certs">Section 02</div><h3>strategic business unit card grid (11 areas)</h3></div><div class="svc-card"><div class="certs">Section 03</div><h3>compliance/certification badge section</h3></div>
+  </div>
+</div></div>
+<div class="section" style="padding-top:0;"><div class="wrap">
+  <div class="section-head">
+    <div class="n">CompTIA-Grounded Capabilities</div>
+    <h2>Services, Named By Technology</h2>
+    <p>Every service we offer cites the specific technologies, tools, and frameworks our technicians are certified on &mdash; see the full <a href="services.html" style="color:var(--accent); font-weight:700;">Services</a> page.</p>
+  </div>
+  <div class="svc-grid">
+    
+      <div class="svc-card">
+        <div class="certs">A+ Core 1 (220-1101) &middot; A+ Core 2 (220-1102)</div>
+        <h3>Help Desk &amp; End-User Support</h3>
+        <p class="sum">Hardware, OS, and end-user issues resolved at the source.</p>
+        <a class="more" href="services.html#help-desk-support">View capabilities &rarr;</a>
+      </div>
+      <div class="svc-card">
+        <div class="certs">Network+ (N10-009) &middot; A+ Core 1 (220-1101)</div>
+        <h3>Network Infrastructure &amp; Engineering</h3>
+        <p class="sum">Design, deployment, and operation of wired and wireless networks.</p>
+        <a class="more" href="services.html#network-infrastructure">View capabilities &rarr;</a>
+      </div>
+      <div class="svc-card">
+        <div class="certs">Security+ (SY0-601)</div>
+        <h3>Cybersecurity &amp; Information Assurance</h3>
+        <p class="sum">Architecture, controls, and governance mapped to CompTIA Security+.</p>
+        <a class="more" href="services.html#info-security-compliance">View capabilities &rarr;</a>
+      </div>
+      <div class="svc-card">
+        <div class="certs">CySA+ (CS0-002) &middot; Security+ (SY0-601)</div>
+        <h3>Threat Detection &amp; Security Operations</h3>
+        <p class="sum">Continuous monitoring, threat hunting, and SOC operations.</p>
+        <a class="more" href="services.html#threat-detection-secops">View capabilities &rarr;</a>
+      </div>
+  </div>
+</div></div>
+<div class="footer-strip"><div class="wrap">
+  <div>Heavy Duty Security Co., LLC &middot; 3723 Minnesota Avenue, St. Louis, MO 63118</div>
+  <div>UEI Z6DLQLN43GD7 &middot; CAGE/NCAGE 6D7N5 &middot; WOSB</div>
+</div></div>
+</body></html>
