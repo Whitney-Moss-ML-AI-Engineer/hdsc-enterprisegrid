@@ -51,14 +51,28 @@
   .footer-strip { padding:26px 28px; border-top:1px solid var(--line); }
   .footer-strip .wrap { max-width:1180px; margin:0 auto; display:flex; justify-content:space-between; font-size:12px; color:var(--ink-soft); flex-wrap:wrap; gap:8px; }
   .motif-grid { position:absolute; inset:0; background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size:48px 48px; opacity:0.35; z-index:0; }
-  @media (max-width: 760px) { .svc-grid { grid-template-columns:1fr; } h1 { font-size:30px; } nav.links { display:none; } }
+  .entity-card { background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:30px 32px; margin-bottom:24px; }
+  .entity-card h3 { font-family:var(--font-head); font-size:20px; margin:0 0 4px; }
+  .entity-card .focus { font-size:14px; color:var(--ink-soft); margin:0 0 16px; }
+  .reg-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:20px; }
+  .reg-item { background:var(--bg-2); border:1px solid var(--line); border-radius:8px; padding:12px 14px; }
+  .reg-item .k { font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--ink-soft); margin-bottom:4px; }
+  .reg-item .v { font-size:13px; font-weight:700; color:var(--ink); word-break:break-word; }
+  .code-groups { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px; margin-top:4px; }
+  .code-group h4 { font-size:12px; text-transform:uppercase; letter-spacing:1px; color:var(--accent); margin:0 0 8px; font-weight:700; }
+  .code-group ul { margin:0; padding-left:18px; font-size:13px; line-height:1.65; color:var(--ink); }
+  .designations { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:18px; }
+  .pill { background:var(--accent-soft); color:var(--accent); font-size:11px; font-weight:700; letter-spacing:0.3px; padding:5px 12px; border-radius:99px; }
+  .notes-list { font-size:13.5px; line-height:1.7; color:var(--ink-soft); padding-left:18px; }
+  .notes-list li { margin-bottom:10px; }
+  @media (max-width: 760px) { .svc-grid { grid-template-columns:1fr; } h1 { font-size:30px; } nav.links { display:none; } .reg-grid { grid-template-columns:repeat(2,1fr); } }
 
 </style>
 </head>
 <body>
 <div class="topbar"><div class="wrap">
   <a class="brand" href="index.html"><span class="mark">HD</span><span class="word">Heavy Duty Security Co.</span></a>
-  <nav class="links"><a href="index.html" class="active">Home</a><a href="services.html" class="">Services</a></nav>
+  <nav class="links"><a href="index.html" class="active">Home</a><a href="services.html" class="">Services</a><a href="government-contracting.html" class="">Gov Contracting</a></nav>
   <button class="btn-primary">Request a Quote</button>
 </div></div>
 
