@@ -28,7 +28,3 @@ underlying technology citations are identical across all 13 sites.
 Heavy Duty Security Co., LLC
 3723 Minnesota Avenue, St. Louis, MO 63118
 UEI Z6DLQLN43GD7 &middot; CAGE/NCAGE 6D7N5
-
-## Security
-
-See [SECURITY.md](SECURITY.md) for how to report a vulnerability and for HDSC's certification status, and [`security-and-trust.html`](security-and-trust.html) for a plain-language summary of HDSC's security approach (NIST CSF–organized; aligned with NIST SP 800-53/800-171, not certified or FedRAMP authorized).
